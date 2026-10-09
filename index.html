@@ -896,7 +896,7 @@
     flex-wrap: wrap;
   }
 
-  /* ============ KONTAKT-FORMULAR (Mini-Reading) ============ */
+  /* ============ KONTAKT-FORMULAR (Anfrage) ============ */
   .contact-form-section {
     padding: 120px 48px;
     background: linear-gradient(180deg, rgba(15, 17, 23, 0.4), rgba(42, 27, 61, 0.15));
@@ -967,6 +967,7 @@
   .form-row input[type="email"],
   .form-row input[type="date"],
   .form-row input[type="time"],
+  .form-row select,
   .form-row textarea {
     width: 100%;
     padding: 14px 16px;
@@ -978,7 +979,17 @@
     transition: all 0.3s ease;
     box-sizing: border-box;
   }
+  .contact-form-points a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .form-row select option {
+    background: #0f1117;
+    color: var(--white);
+  }
   .form-row input:focus,
+  .form-row select:focus,
   .form-row textarea:focus {
     outline: none;
     border-color: var(--gold);
@@ -1464,7 +1475,7 @@
       <p class="product-desc">Eine persönliche Sitzung, in der wir gemeinsam dein Chart lesen — Sternzeichen, Mond, Aszendent und mehr. Live, präzise, in die Tiefe.</p>
       <div class="product-footer">
         <div class="product-price">200<small>,00 €</small></div>
-        <a href="#kontaktformular" class="product-link">Buchen →</a>
+        <a href="#kontaktformular" class="product-link" data-anliegen="1:1 Astro-Reading">Buchen →</a>
       </div>
     </div>
 
@@ -1475,7 +1486,7 @@
       <p class="product-desc">Mindestens 4 Calls, 24/7 WhatsApp-Support, alle Planetenpositionen besprochen. Echte Transformation braucht Zeit — diesen Monat bekommst du sie.</p>
       <div class="product-footer">
         <div class="product-price">499<small>,00 €</small></div>
-        <a href="#kontaktformular" class="product-link">Buchen →</a>
+        <a href="#kontaktformular" class="product-link" data-anliegen="1 Monat Betreuung">Buchen →</a>
       </div>
     </div>
 
@@ -1486,7 +1497,7 @@
       <p class="product-desc">Die umfangreiche Variante: 140 Seiten, software-gestützt erstellt. Detaillierte Aufschlüsselung aller Planeten, Häuser, Aspekte und Strukturanteile — zum Lesen, Wiederlesen und Vertiefen.</p>
       <div class="product-footer">
         <div class="product-price">55<small>,00 €</small></div>
-        <a href="#kontaktformular" class="product-link">Anfragen →</a>
+        <a href="#kontaktformular" class="product-link" data-anliegen="Astroanalyse, software-gestützt">Anfragen →</a>
       </div>
     </div>
 
@@ -1497,7 +1508,7 @@
       <p class="product-desc">Deine schriftliche Analyse, die ich persönlich für dich schreibe. Direkter Bezug auf dich, fokussiert auf deine zentralen Themen — Stärken, Muster, Transformations-Hinweise. Wird laufend weiterentwickelt und vertieft.</p>
       <div class="product-footer">
         <div class="product-price">70<small>,00 €</small></div>
-        <a href="#kontaktformular" class="product-link">Anfragen →</a>
+        <a href="#kontaktformular" class="product-link" data-anliegen="Astroanalyse Premium">Anfragen →</a>
       </div>
     </div>
 
@@ -1508,7 +1519,7 @@
       <p class="product-desc">Du willst Astrologie verstehen statt nur konsumieren? In 1-Stunden-Sessions zeige ich dir, wie du dein Chart selbst lesen kannst.</p>
       <div class="product-footer">
         <div class="product-price">50<small>,00 €</small><small> / Stunde</small></div>
-        <a href="#kontaktformular" class="product-link">Lernen →</a>
+        <a href="#kontaktformular" class="product-link" data-anliegen="Einzelunterricht">Lernen →</a>
       </div>
     </div>
 
@@ -1530,7 +1541,7 @@
       <p class="product-desc">Ein vollständiger Kurs, der dich von den Grundlagen bis zur eigenständigen Chart-Lesung führt. In Vorbereitung.</p>
       <div class="product-footer">
         <div class="product-price">Bald<small></small></div>
-        <a href="#kontaktformular" class="product-link">Vormerken →</a>
+        <a href="#kontaktformular" class="product-link" data-anliegen="Videokurs vormerken">Vormerken →</a>
       </div>
     </div>
 
@@ -1541,7 +1552,7 @@
       <p class="product-desc">Schreib mir kurz, was dich gerade beschäftigt. Ich sage dir ehrlich, welcher Weg für dich der richtige ist — oder ob keiner davon es ist.</p>
       <div class="product-footer">
         <div class="product-price">Kostenlos<small></small></div>
-        <a href="#kontaktformular" class="product-link">Schreiben →</a>
+        <a href="#kontaktformular" class="product-link" data-anliegen="Ich weiß noch nicht, was passt">Schreiben →</a>
       </div>
     </div>
 
@@ -1592,26 +1603,41 @@
       <span class="arrow">→</span>
     </a>
     <a href="#kontaktformular" class="btn-ghost">
-      <span>Mini-Reading anfragen</span>
+      <span>Anfrage schreiben</span>
     </a>
   </div>
 </section>
 
-<!-- ============ MINI READING / KONTAKTFORMULAR ============ -->
+<!-- ============ ANFRAGE / KONTAKTFORMULAR ============ -->
 <section id="kontaktformular" class="contact-form-section">
   <div class="contact-form-wrap">
     <div class="contact-form-intro">
-      <span class="section-label">Kostenloses Mini-Reading</span>
-      <h2>Gib mir deine <em>Geburtsdaten</em> — ich gebe dir einen ersten Einblick.</h2>
-      <p>Schick mir deinen Namen, dein Geburtsdatum, deine Geburtszeit und den Geburtsort. Ich melde mich mit einem kleinen, persönlichen Mini-Reading bei dir — direkt aus deinem Chart, kein Standardtext.</p>
+      <span class="section-label">Anfrage</span>
+      <h2>Schreib mir — <em>wir finden deinen Weg</em>.</h2>
+      <p>Sag mir, worum es dir geht, und schick mir gleich deine Geburtsdaten mit. Dann kann ich mir dein Geburtsbild schon vorher anschauen und dir eine ehrliche Empfehlung geben.</p>
       <ul class="contact-form-points">
-        <li>Du bekommst eine erste echte Einschätzung deines Charts</li>
-        <li>Komplett kostenlos und unverbindlich</li>
-        <li>Wenn du tiefer gehen willst, sprechen wir über die nächsten Schritte</li>
+        <li>Persönliche Antwort, kein Standardtext</li>
+        <li>Du weißt danach, welcher Weg zu dir passt — oder ob keiner davon</li>
+        <li>Einen ersten Einblick ohne Anfrage gibt's in meinen Livestreams auf <a href="https://www.tiktok.com/@astro.johnny" target="_blank" rel="noopener">TikTok (@astro.johnny)</a></li>
       </ul>
     </div>
 
-    <form class="contact-form" action="https://formspree.io/f/mlgzanll" method="POST" id="miniReadingForm" onsubmit="return handleMiniReadingSubmit(event)">
+    <form class="contact-form" action="https://formspree.io/f/mlgzanll" method="POST" id="anfrageForm" onsubmit="return handleAnfrageSubmit(event)">
+      <input type="hidden" name="_subject" value="Neue Anfrage über astro-johnny.com">
+
+      <div class="form-row">
+        <label for="cf-anliegen">Worum geht's? <span class="required">*</span></label>
+        <select id="cf-anliegen" name="anliegen" required>
+          <option value="1:1 Astro-Reading">1:1 Astro-Reading</option>
+          <option value="1 Monat Betreuung">1 Monat Betreuung</option>
+          <option value="Astroanalyse, software-gestützt">Astroanalyse, software-gestützt</option>
+          <option value="Astroanalyse Premium">Astroanalyse Premium</option>
+          <option value="Einzelunterricht">Einzelunterricht</option>
+          <option value="Videokurs vormerken">Videokurs vormerken</option>
+          <option value="Ich weiß noch nicht, was passt" selected>Ich weiß noch nicht, was passt</option>
+        </select>
+      </div>
+
       <div class="form-row">
         <label for="cf-name">Name <span class="required">*</span></label>
         <input type="text" id="cf-name" name="name" required autocomplete="given-name" placeholder="Dein Vorname">
@@ -1620,13 +1646,13 @@
       <div class="form-row">
         <label for="cf-email">E-Mail <span class="required">*</span></label>
         <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="deine@adresse.de">
-        <small class="form-hint">Hier schicke ich dir dein Mini-Reading hin.</small>
+        <small class="form-hint">Hier melde ich mich bei dir.</small>
       </div>
 
       <div class="form-grid-2">
         <div class="form-row">
-          <label for="cf-date">Geburtsdatum <span class="required">*</span></label>
-          <input type="date" id="cf-date" name="birth_date" required>
+          <label for="cf-date">Geburtsdatum</label>
+          <input type="date" id="cf-date" name="birth_date">
         </div>
         <div class="form-row">
           <label for="cf-time">Geburtszeit</label>
@@ -1636,8 +1662,9 @@
       </div>
 
       <div class="form-row">
-        <label for="cf-place">Geburtsort <span class="required">*</span></label>
-        <input type="text" id="cf-place" name="birth_place" required placeholder="z.B. Graz, Österreich">
+        <label for="cf-place">Geburtsort</label>
+        <input type="text" id="cf-place" name="birth_place" placeholder="z.B. Graz, Österreich">
+        <small class="form-hint">Für Reading, Betreuung und Analysen brauche ich Datum, Zeit und Ort.</small>
       </div>
 
       <div class="form-row">
@@ -1653,7 +1680,7 @@
       </div>
 
       <button type="submit" class="btn-primary form-submit">
-        <span>Mini-Reading anfragen</span>
+        <span>Anfrage senden</span>
         <span class="arrow">→</span>
       </button>
 
@@ -1828,18 +1855,19 @@
       Hinweis zu WhatsApp Business: Bei der Nutzung von WhatsApp werden Daten an Meta Platforms Ireland Ltd. übermittelt. Details siehe <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener">WhatsApp-Datenschutzerklärung</a>.
     </p>
 
-    <h2>5. Kontaktformular / Mini-Reading-Anfrage</h2>
+    <h2>5. Kontaktformular / Anfrage</h2>
     <p>
-      Über das Kontaktformular auf dieser Seite kannst du ein kostenloses Mini-Reading anfragen. Dabei werden folgende Daten erhoben:
+      Über das Kontaktformular auf dieser Seite kannst du mir eine Anfrage zu meinen Angeboten schicken. Dabei werden folgende Daten erhoben:
     </p>
     <ul>
+      <li>Gewähltes Anliegen</li>
       <li>Vorname</li>
       <li>E-Mail-Adresse</li>
-      <li>Geburtsdatum, Geburtszeit (sofern bekannt), Geburtsort</li>
+      <li>Optional: Geburtsdatum, Geburtszeit, Geburtsort</li>
       <li>Optionale Nachricht</li>
     </ul>
     <p>
-      Diese Daten verwende ich ausschließlich zur Erstellung und Übermittlung deines Mini-Readings sowie zur Beantwortung möglicher Rückfragen. Sie werden nicht an Dritte weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung).
+      Diese Daten verwende ich ausschließlich zur Bearbeitung deiner Anfrage, zur Vorbereitung eines gebuchten Angebots sowie zur Beantwortung möglicher Rückfragen. Sie werden nicht an Dritte weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung).
     </p>
     <p>
       <strong>Eingesetzter Formular-Dienst:</strong> Das Formular wird über Formspree (Formspree, Inc., USA) verarbeitet. Es besteht ein Auftragsverarbeitungsvertrag. Datenschutz: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a>
@@ -1987,11 +2015,19 @@
     if (e.key === 'Escape') closeLegal();
   });
 
-  // Mini-Reading Form Submit
+  // Angebots-Buttons wählen im Anfrage-Formular das passende Anliegen vor
+  document.querySelectorAll('a[data-anliegen]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const select = document.getElementById('cf-anliegen');
+      if (select) select.value = link.dataset.anliegen;
+    });
+  });
+
+  // Anfrage Form Submit
   // Formspree ist eingerichtet (Form-ID: mlgzanll).
   // Falls die action-URL aus Versehen den Platzhalter "DEINE_FORM_ID" enthalten würde
   // oder kein gültiges http(s) ist, greift ein Mailto-Fallback.
-  function handleMiniReadingSubmit(e) {
+  function handleAnfrageSubmit(e) {
     const form = e.target;
     const action = form.getAttribute('action') || '';
 
@@ -1999,17 +2035,18 @@
     if (action.includes('DEINE_FORM_ID') || !action.startsWith('http')) {
       e.preventDefault();
 
+      const anliegen = form.anliegen.value;
       const name = form.name.value.trim();
       const email = form.email.value.trim();
-      const date = form.birth_date.value;
+      const date = form.birth_date.value || '(nicht angegeben)';
       const time = form.birth_time.value || '(unbekannt)';
-      const place = form.birth_place.value.trim();
+      const place = form.birth_place.value.trim() || '(nicht angegeben)';
       const message = (form.message.value || '').trim();
 
-      const subject = encodeURIComponent('Mini-Reading-Anfrage: ' + name);
+      const subject = encodeURIComponent('Anfrage (' + anliegen + '): ' + name);
       const body = encodeURIComponent(
         'Hallo Jonathan,\n\n' +
-        'ich würde gerne ein Mini-Reading anfragen.\n\n' +
+        'ich habe eine Anfrage zu: ' + anliegen + '\n\n' +
         '— Name: ' + name + '\n' +
         '— E-Mail: ' + email + '\n' +
         '— Geburtsdatum: ' + date + '\n' +
