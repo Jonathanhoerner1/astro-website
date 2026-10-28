@@ -687,6 +687,12 @@
     font-family: var(--sans); font-style: normal; font-size: 9px;
     letter-spacing: 0.2em;
   }
+  .product.verfuegbar .product-num::after {
+    content: 'JETZT VERFÜGBAR'; margin-left: 20px; padding: 4px 10px;
+    background: var(--gold); color: var(--black);
+    font-family: var(--sans); font-style: normal; font-size: 9px;
+    letter-spacing: 0.2em;
+  }
   .product.coming-soon { opacity: 0.6; }
   .product.coming-soon .product-num::after {
     content: 'INCOMING'; margin-left: 20px; padding: 4px 10px;
@@ -1534,14 +1540,14 @@
       </div>
     </div>
 
-    <div class="product coming-soon">
+    <div class="product verfuegbar">
       <div class="product-num">vii</div>
       <h3 class="product-title">Videokurs</h3>
       <p class="product-tagline">Astrologie systematisch lernen</p>
-      <p class="product-desc">Ein vollständiger Kurs, der dich von den Grundlagen bis zur eigenständigen Chart-Lesung führt. In Vorbereitung.</p>
+      <p class="product-desc">Ein vollständiger Kurs, der dich von den Grundlagen bis zur eigenständigen Chart-Lesung führt. Jetzt in der Kosmos Community auf Skool.</p>
       <div class="product-footer">
-        <div class="product-price">Bald<small></small></div>
-        <a href="#kontaktformular" class="product-link" data-anliegen="Videokurs vormerken">Vormerken →</a>
+        <div class="product-price">Skool<small></small></div>
+        <a href="https://www.skool.com/astro-johnny-kosmos-community-6060/about" target="_blank" rel="noopener" class="product-link">Zum Kurs →</a>
       </div>
     </div>
 
@@ -1633,7 +1639,6 @@
           <option value="Astroanalyse, software-gestützt">Astroanalyse, software-gestützt</option>
           <option value="Astroanalyse Premium">Astroanalyse Premium</option>
           <option value="Einzelunterricht">Einzelunterricht</option>
-          <option value="Videokurs vormerken">Videokurs vormerken</option>
           <option value="Ich weiß noch nicht, was passt" selected>Ich weiß noch nicht, was passt</option>
         </select>
       </div>
