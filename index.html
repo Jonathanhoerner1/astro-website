@@ -486,6 +486,16 @@
     color: var(--white);
     font-weight: 400;
   }
+  .stimmen { margin-top: 110px; }
+  .stimmen-kopf { max-width: 720px; }
+  .stimmen-kopf h3 {
+    font-family: var(--serif); font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 300; line-height: 1.2;
+  }
+  .stimmen-kopf h3 em { font-style: italic; color: var(--gold); }
+  .stimmen .testimonials { margin-top: 48px; }
+  .stimmen .testimonial:only-child { grid-column: 1 / -1; max-width: 760px; }
+  .stimmen .testimonial-text { white-space: pre-line; }
   .testimonial-name span {
     display: block;
     font-size: 11px;
@@ -1569,6 +1579,26 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- Stimmen von Klient:innen — neue Stimme = einen <figure>-Block kopieren, Text + Name + Angebot anpassen -->
+  <div class="stimmen" id="stimmen">
+    <div class="stimmen-kopf">
+      <span class="section-label">Stimmen</span>
+      <h3>Was andere nach ihrer <em>Analyse</em> sagen.</h3>
+    </div>
+    <div class="testimonials">
+
+      <figure class="testimonial">
+        <blockquote class="testimonial-text">Ich bin noch nicht ganz fertig, aber ich bin beeindruckt. Ich hab schon öfter über meinen Chart drüber schauen lassen – aber was ich bisher erfahren habe, kommt nicht ansatzweise daran. Wirklich Respekt. 🔥
+Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
+        <figcaption class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div class="testimonial-name">Anna<span>Astroanalyse Premium</span></div>
+        </figcaption>
+      </figure>
+
+    </div>
   </div>
 </section>
 
