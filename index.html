@@ -1276,8 +1276,34 @@
     font-size: 14px;
   }
 
+  /* ============ WORKSHOP-TERMIN (zeitlich begrenzt) ============ */
+  .workshop { padding-top: 40px; }
+  .workshop-box {
+    display: grid; grid-template-columns: 340px 1fr; gap: 72px; align-items: center;
+    padding: 56px; border: 1px solid rgba(212, 175, 55, 0.35);
+    background: linear-gradient(135deg, rgba(42, 27, 61, 0.55), rgba(17, 24, 39, 0.55));
+    box-shadow: 0 0 80px rgba(42, 27, 61, 0.5);
+  }
+  .workshop-video {
+    width: 100%; aspect-ratio: 9 / 16; display: block; object-fit: cover; background: var(--black);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4), 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  .workshop-text h2 { margin-bottom: 18px; }
+  .workshop-text > p { color: var(--white-dim); margin-bottom: 32px; max-width: 560px; }
+  .workshop-fakten { list-style: none; display: grid; gap: 18px; margin-bottom: 40px; }
+  .workshop-fakten li { display: grid; grid-template-columns: 90px 1fr; gap: 16px; align-items: baseline; }
+  .workshop-fakten .lab { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+  .workshop-fakten .wert { font-family: var(--serif); font-size: 21px; line-height: 1.35; }
+  .workshop-fakten .wert small { display: block; font-family: var(--sans); font-size: 13px; color: var(--white-dim); }
+  .workshop-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+
   /* ============ RESPONSIVE ============ */
   @media (max-width: 900px) {
+    .workshop { padding-top: 20px; }
+    .workshop-box { grid-template-columns: 1fr; gap: 40px; padding: 32px 22px; }
+    .workshop-video { max-width: 280px; margin: 0 auto; }
+    .workshop-fakten li { grid-template-columns: 1fr; gap: 2px; }
+    .workshop-actions a { width: 100%; justify-content: center; }
     nav { padding: 14px 20px; }
     .nav-links { display: none; }
     .nav-cta { padding: 8px 16px; font-size: 10px; }
@@ -1388,6 +1414,32 @@
     <div class="hero-portrait-wrap">
       <img src="jonathan-portrait.jpg" alt="Jonathan Hörner — AstroJohnny" class="hero-portrait" />
       <div class="portrait-tag">AstroJohnny</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKSHOP-TERMIN · blendet sich nach data-bis selbst aus ============ -->
+<section id="workshop" class="workshop" data-bis="2026-11-21">
+  <div class="workshop-box">
+    <video class="workshop-video" src="workshop-standort.mp4" poster="workshop-standort-poster.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
+    <div class="workshop-text">
+      <span class="section-label">Workshop · Sa, 21. November 2026</span>
+      <h2>Standort-Astrologie <em>hautnah erleben.</em></h2>
+      <p>Es gibt Orte, an denen du aufblühst, und Orte, die dich ausbremsen. In diesem Workshop zeigt dir Anna (@astrogeo.anna), wie du deine Astro-Landkarte liest und Orte findest, die dich stärken. Vielleicht kennst du sie schon aus meinen Lives. Wir schauen uns deine eigene Karte live an, in kleiner Runde.</p>
+      <ul class="workshop-fakten">
+        <li><span class="lab">Wann</span><span class="wert">Samstag, 21. November 2026 · 11–14 Uhr<small>Bitte 15 Minuten früher da sein.</small></span></li>
+        <li><span class="lab">Wo</span><span class="wert">Grüner Schwan<small>Eschenbach 12 · 91224 Pommelsbrunn (Mittelfranken)</small></span></li>
+        <li><span class="lab">Gruppe</span><span class="wert">Maximal 4 Plätze<small>Bewusst klein, bewusst persönlich.</small></span></li>
+      </ul>
+      <div class="workshop-actions">
+        <a href="#kontaktformular" class="btn-primary" data-anliegen="Workshop Standort-Astrologie (21.11.)">
+          <span>Platz anfragen</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="https://www.instagram.com/astrogeo.anna/" class="btn-ghost" target="_blank" rel="noopener">
+          <span>Direkt bei Anna anmelden</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1687,6 +1739,7 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
           <option value="Astroanalyse, software-gestützt">Astroanalyse, software-gestützt</option>
           <option value="Astroanalyse Premium">Astroanalyse Premium</option>
           <option value="Einzelunterricht">Einzelunterricht</option>
+          <option value="Workshop Standort-Astrologie (21.11.)" class="nur-workshop">Workshop Standort-Astrologie (21.11.)</option>
           <option value="Ich weiß noch nicht, was passt" selected>Ich weiß noch nicht, was passt</option>
         </select>
       </div>
@@ -2066,6 +2119,14 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
   }
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLegal();
+  });
+
+  // Zeitlich begrenzte Blöcke verschwinden nach ihrem Datum von selbst (samt Formular-Option)
+  document.querySelectorAll('[data-bis]').forEach((el) => {
+    if (new Date() > new Date(el.dataset.bis + 'T23:59:59')) {
+      el.remove();
+      document.querySelectorAll('.nur-workshop').forEach((o) => o.remove());
+    }
   });
 
   // Angebots-Buttons wählen im Anfrage-Formular das passende Anliegen vor
