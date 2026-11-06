@@ -1720,7 +1720,7 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
       </ul>
     </div>
 
-    <form class="contact-form newsletter-form" id="newsletterForm" action="https://f3c9bcdd.sibforms.com/serve/MUIFAIi3bt9XXKRwcW52sfvMuAXuw69yzhTdqgaCbKAuYTSFaMnrDqD0VMCae3sGcinkaSMZ5Z_CyA1i42FUPByD_a4Dznc_8BaYjsfzfq4SyCyrkj1ziSvjPGiXP43Tn7Uk0gC1EE0bPeTWHuE82GdWlChH75lqOhZk01uX0SJf6oetEkfZClGSCVuwva_XDWu0yKpEBBc_5Aunpw==" method="POST" novalidate>
+    <form class="contact-form newsletter-form" id="newsletterForm" action="/api/newsletter" method="POST" novalidate>
       <div class="form-row">
         <label for="nl-vorname">Vorname</label>
         <input type="text" id="nl-vorname" name="VORNAME" maxlength="200" autocomplete="given-name" placeholder="Dein Vorname">
@@ -1729,8 +1729,7 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
         <label for="nl-email">E-Mail-Adresse <span class="required">*</span></label>
         <input type="email" id="nl-email" name="EMAIL" required autocomplete="email" placeholder="deine@adresse.de">
       </div>
-      <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-      <input type="hidden" name="locale" value="de">
+      <input type="text" name="website" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 
       <button type="submit" class="btn-primary form-submit">
         <span>Anmelden</span>
@@ -2254,7 +2253,15 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
       }
       knopf.disabled = true;
       zeige('Einen Moment …', '');
-      fetch(form.action + '?isAjax=1', { method: 'POST', body: new FormData(form) })
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          email: email.value.trim(),
+          vorname: form.querySelector('#nl-vorname').value.trim(),
+          website: form.querySelector('[name=website]').value
+        })
+      })
         .then(function (r) { return r.json(); })
         .then(function (d) {
           if (d && d.success) {
@@ -2269,6 +2276,11 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
           zeige('Das hat leider nicht geklappt. Versuch es bitte gleich noch einmal oder schreib mir an hallo@astro-johnny.com.', 'fehler');
         });
     });
+    // Rückkehr aus der Bestätigungsmail
+    if (/[?&]angemeldet=1/.test(location.search)) {
+      form.classList.add('gesendet');
+      zeige('Danke, deine Anmeldung ist bestätigt. Die nächste Post aus dem Kosmos kommt zu dir.', 'ok');
+    }
   })();
 </script>
 
