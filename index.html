@@ -5,10 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Jonathan Hörner — Astrologie, die wirklich trifft</title>
 <meta name="description" content="1:1 Astrologie-Readings, schriftliche Analysen und monatliche Begleitung. Klarheit durch dein Geburtsbild — präzise, ehrlich, transformativ.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://www.astro-johnny.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://www.astro-johnny.com/">
+<meta property="og:title" content="Jonathan Hörner — Astrologie, die wirklich trifft">
+<meta property="og:description" content="1:1 Astrologie-Readings, schriftliche Analysen und monatliche Begleitung. Klarheit durch dein Geburtsbild — präzise, ehrlich, transformativ.">
+<meta property="og:image" content="https://www.astro-johnny.com/og-bild.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <style>
+  @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; font-display: swap; src: url(fonts/cormorant-garamond-italic.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/cormorant-garamond-italic.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300; font-display: swap; src: url(fonts/cormorant-garamond-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/cormorant-garamond-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/cormorant-garamond-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/cormorant-garamond-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 300; font-display: swap; src: url(fonts/inter-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/inter-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/inter-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/inter-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/inter-normal.woff2) format('woff2'); }
   :root {
     --black: #0F1117;
     --deep-blue: #111827;
@@ -1136,6 +1154,15 @@
     color: var(--gold); text-transform: uppercase;
     margin-top: 4px;
   }
+  .footer-social { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .footer-social a { display: flex; flex-direction: column; align-items: center; gap: 7px; width: 54px; font-size: 11px; color: var(--white-dim); text-decoration: none; transition: color .2s; }
+  .footer-social a:hover { color: var(--gold); }
+  .sm-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: #fff; transition: transform .2s; }
+  .footer-social a:hover .sm-icon { transform: translateY(-2px); }
+  .sm-icon svg { width: 26px; height: 26px; display: block; }
+  .sm-eigen { background: transparent; border: 1px solid var(--gold); color: var(--gold); }
+  .sm-eigen svg { width: 21px; height: 21px; }
+  .sm-buchstabe { font-family: var(--serif); font-size: 24px; font-weight: 600; line-height: 1; }
   .footer-tagline {
     color: var(--white-dim);
     font-size: 14px;
@@ -1747,10 +1774,10 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
 <section id="kontakt" class="cta-section">
   <span class="section-label">Bereit?</span>
   <h2>Dein Kosmos wartet — <em>lass ihn sprechen.</em></h2>
-  <p>Ob 1:1 Reading, schriftliche Analyse oder monatliche Begleitung — der erste Schritt ist eine kurze Nachricht. Über Linktree findest du alle Wege, mich zu erreichen.</p>
+  <p>Ob 1:1 Reading, schriftliche Analyse oder monatliche Begleitung — der erste Schritt ist eine kurze Nachricht. Auf meiner Link-Seite findest du alle Wege zu mir.</p>
   <div class="cta-buttons">
-    <a href="https://linktr.ee/Jonathanhoerner" target="_blank" rel="noopener" class="btn-primary">
-      <span>Alle Wege · Linktree</span>
+    <a href="https://links.astro-johnny.com" target="_blank" rel="noopener" class="btn-primary">
+      <span>Alle Wege zu mir</span>
       <span class="arrow">→</span>
     </a>
     <a href="#kontaktformular" class="btn-ghost">
@@ -1852,6 +1879,13 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
         </div>
       </div>
       <p class="footer-tagline">Astrologie als Werkzeug der Klarheit, nicht als Schauspiel. 1:1 Readings, schriftliche Analysen und monatliche Begleitung.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/astro.johnny_" target="_blank" rel="noopener"><span class="sm-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><radialGradient id="ig-verlauf" cx="28%" cy="100%" r="110%"><stop offset="0" stop-color="#ffdc80"/><stop offset=".3" stop-color="#f77737"/><stop offset=".55" stop-color="#e1306c"/><stop offset=".8" stop-color="#c13584"/><stop offset="1" stop-color="#5851db"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig-verlauf)"/><rect x="4.5" y="4.5" width="15" height="15" rx="4.5" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="16.7" cy="7.3" r="1.05" fill="#fff"/></svg></span>Instagram</a>
+        <a href="https://www.tiktok.com/@astro.johnny" target="_blank" rel="noopener"><span class="sm-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25F4EE" transform="translate(-.8 -.6)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FE2C55" transform="translate(.8 .6)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#000" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span>TikTok</a>
+        <a href="https://t.me/+WgZsHvIjdIkwZWNi" target="_blank" rel="noopener"><span class="sm-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><path fill="#fff" d="M17.7 7.2l-2.3 10.9c-.2.8-.6 1-1.3.6l-3.5-2.6-1.7 1.6c-.2.2-.3.3-.7.3l.3-3.6 6.5-5.9c.3-.3-.1-.4-.4-.2l-8 5-3.4-1.1c-.7-.2-.8-.7.2-1.1l13.4-5.2c.6-.2 1.1.1.9 1.3z"/></svg></span>Telegram</a>
+        <a href="https://www.skool.com/astro-johnny-kosmos-community-6060/about" target="_blank" rel="noopener"><span class="sm-icon sm-eigen sm-buchstabe">S</span>Skool</a>
+        <a href="https://links.astro-johnny.com" target="_blank" rel="noopener"><span class="sm-icon sm-eigen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg></span>Alle Links</a>
+      </div>
     </div>
     <div class="footer-col">
       <h4>Angebote</h4>
