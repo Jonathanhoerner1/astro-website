@@ -504,6 +504,25 @@
     color: var(--white);
     font-weight: 400;
   }
+  /* ============ FARBWELTEN (Analyse in deiner Farbe) ============ */
+  .farbwahl { margin-top: 110px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.25fr); gap: 56px; align-items: center; }
+  .farbwahl h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px,4vw,44px); line-height: 1.1; margin: 14px 0 18px; }
+  .farbwahl h3 em { color: var(--gold); }
+  .farbwahl p { color: var(--white-dim); max-width: 460px; }
+  .farb-tupfer { display: flex; flex-wrap: wrap; gap: 14px 14px; row-gap: 30px; margin: 30px 0 34px; }
+  .farb-tupfer button { width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(245,243,238,.25); cursor: pointer;
+    background: linear-gradient(135deg, var(--a) 0 55%, var(--b) 55% 100%); transition: transform .2s, box-shadow .2s; }
+  .farb-tupfer button:hover { transform: scale(1.08); }
+  .farb-tupfer button.sonder { position: relative; }
+  .farb-tupfer button.sonder[data-farbe="dreiklang"] { background: linear-gradient(170deg,#d6262f 0%,#f0592a 25%,#ffd400 50%,#3a4a8a 75%,#1b2a5e 100%); }
+  .farb-tupfer button.sonder:not([data-farbe="dreiklang"])::after { content: none; }
+  .farb-tupfer button.sonder[data-farbe="dreiklang"]::after { content: 'Sonderedition · +2 €'; position: absolute; left: 0; top: 100%; transform: none; margin-top: 6px; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+  .farb-tupfer button[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--black), 0 0 0 4px var(--gold); }
+  .farb-name { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--gold); }
+  .farb-name small { display: block; font-family: var(--sans); font-style: normal; font-size: 13px; color: var(--white-faint); margin-top: 2px; }
+  .farb-bild img { width: 100%; height: auto; display: block; border-radius: 6px; box-shadow: 0 30px 80px rgba(0,0,0,.55); transition: opacity .25s; }
+  @media (max-width: 860px) { .farbwahl { grid-template-columns: 1fr; gap: 34px; } }
+
   .stimmen { margin-top: 110px; }
   .stimmen-kopf { max-width: 720px; }
   .stimmen-kopf h3 {
@@ -1681,6 +1700,18 @@
 
   </div>
 
+  <!-- Farbwelten: Musterbilder aus OUTPUT/farbwelten (anonymisiertes Vorzeige-Exemplar), Werkzeug .claude/skills/astro-analyse/farbwelten.py -->
+  <div class="farbwahl" id="farbwelten">
+    <div>
+      <span class="section-label">Deine Farbe</span>
+      <h3>Deine Analyse in <em>deiner</em> Farbe.</h3>
+      <p>Deine Premium-Analyse bekommst du in der Farbwelt, die zu dir passt. Gleicher Inhalt, gleiche Tiefe, nur deine Farbe. Tipp eine Farbe an und sieh dir an, wie dein Dokument aussehen würde. Die Farben sind inklusive, die glänzende Sonderedition kostet 2 € mehr.</p>
+      <div class="farb-tupfer" role="group" aria-label="Farbwelt wählen"><button type="button" style="--a:#2a2148;--b:#d4af37" data-farbe="kosmos" data-titel="Kosmos" data-text="Violett und Gold, die Astro-Johnny-Farbe" aria-label="Kosmos" aria-pressed="true"></button><button type="button" style="--a:#2b2313;--b:#e2b84a" data-farbe="gold" data-titel="Gold" data-text="Tiefes Onyx, leuchtendes Gold und Champagner" aria-label="Gold" aria-pressed="false"></button><button type="button" style="--a:#fbf8f1;--b:#a8842c" data-farbe="weissgold" data-titel="Weiß &amp; Gold" data-text="Elfenbein, warmes Gold, hell und edel" aria-label="Weiß &amp; Gold" aria-pressed="false"></button><button type="button" style="--a:#1b2f58;--b:#c9a45c" data-farbe="nachtblau" data-titel="Nachtblau" data-text="Navy, Hortensienblau und warmes Gold" aria-label="Nachtblau" aria-pressed="false"></button><button type="button" style="--a:#173a2e;--b:#d4af37" data-farbe="smaragd" data-titel="Smaragd" data-text="Tiefes Waldgrün, Gold und ein Hauch Kupfer" aria-label="Smaragd" aria-pressed="false"></button><button type="button" style="--a:#fcf6f3;--b:#b57a6a" data-farbe="rosechampagner" data-titel="Rosé &amp; Champagner" data-text="Zartes Rosé, Champagner und Roségold" aria-label="Rosé &amp; Champagner" aria-pressed="false"></button><button type="button" style="--a:#ffe600;--b:#111111" data-farbe="knallgelb" data-titel="Knallgelb" data-text="Leuchtendes Gelb mit schwarzer Schrift" aria-label="Knallgelb" aria-pressed="false"></button><button type="button" style="--a:#c4041f;--b:#ffffff" data-farbe="stadionrot" data-titel="Stadionrot" data-text="Kräftiges Rot, reines Weiß und Blau" aria-label="Stadionrot" aria-pressed="false"></button><button type="button" class="sonder" style="--a:#d6262f;--b:#1b2a5e" data-farbe="dreiklang" data-titel="Dreiklang · Sonderedition" data-text="Rot, Gelb und Nachtblau kräftig ineinander verlaufend · Aufpreis +2 €" aria-label="Dreiklang, Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(160deg,#4a2f06 0%,#a8741a 25%,#f6d77a 45%,#c8942c 62%,#fff0b8 78%,#3d2604 100%)" data-farbe="goldedition" data-titel="Gold · Sonderedition" data-text="Glänzendes Metallgold mit Licht-Reflexen · Aufpreis +2 €" aria-label="Gold · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(160deg,#2a2e36 0%,#7d8592 25%,#e9edf3 45%,#9aa3b1 62%,#ffffff 78%,#23262d 100%)" data-farbe="silberedition" data-titel="Silber · Sonderedition" data-text="Glänzendes Chrom-Silber mit Licht-Reflexen · Aufpreis +2 €" aria-label="Silber · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(160deg,#2a0610 0%,#8e1d36 30%,#c2475f 45%,#f3cf63 52%,#7a1428 62%,#1f040b 100%)" data-farbe="burgund" data-titel="Burgund · Sonderedition" data-text="Tiefes Burgund wie Samt, mit Blattgold und Funkeln · Aufpreis +2 €" aria-label="Burgund · Sonderedition" aria-pressed="false"></button></div>
+      <div class="farb-name" id="farbName">Kosmos<small>Violett und Gold, die Astro-Johnny-Farbe</small></div>
+    </div>
+    <div class="farb-bild"><img id="farbBild" src="farbwelt-kosmos.jpg" width="1400" height="983" loading="lazy" alt="Deckblatt und Innenseite einer Beispiel-Analyse in der Farbwelt Kosmos"></div>
+  </div>
+
   <!-- Stimmen von Klient:innen — neue Stimme = einen <figure>-Block kopieren, Text + Name + Angebot anpassen -->
   <div class="stimmen" id="stimmen">
     <div class="stimmen-kopf">
@@ -1813,6 +1844,23 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
           <option value="Einzelunterricht">Einzelunterricht</option>
           <option value="Workshop Standort-Astrologie (21.11.)" class="nur-workshop">Workshop Standort-Astrologie (21.11.)</option>
           <option value="Ich weiß noch nicht, was passt" selected>Ich weiß noch nicht, was passt</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="cf-farbe">Farbwelt deiner Premium-Analyse <span style="opacity:.6">(optional)</span></label>
+        <select id="cf-farbe" name="farbwelt">
+          <option value="Kosmos" selected>Kosmos</option>
+          <option value="Gold">Gold</option>
+          <option value="Weiß &amp; Gold">Weiß &amp; Gold</option>
+          <option value="Nachtblau">Nachtblau</option>
+          <option value="Smaragd">Smaragd</option>
+          <option value="Rosé &amp; Champagner">Rosé &amp; Champagner</option>
+          <option value="Knallgelb">Knallgelb</option>
+          <option value="Stadionrot">Stadionrot</option>
+          <option value="Dreiklang · Sonderedition">Dreiklang · Sonderedition (+2 €)</option>
+          <option value="Gold · Sonderedition">Gold · Sonderedition (+2 €)</option>
+          <option value="Silber · Sonderedition">Silber · Sonderedition (+2 €)</option>
+          <option value="Burgund · Sonderedition">Burgund · Sonderedition (+2 €)</option>
         </select>
       </div>
 
@@ -2318,5 +2366,19 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
   })();
 </script>
 
+<script>
+(function(){
+  var g=document.querySelector('.farb-tupfer'); if(!g) return;
+  var bild=document.getElementById('farbBild'), name=document.getElementById('farbName'), sel=document.getElementById('cf-farbe');
+  ['gold','weissgold','nachtblau','smaragd','rosechampagner','knallgelb','stadionrot','dreiklang','goldedition','silberedition','burgund'].forEach(function(k){ var i=new Image(); i.src='farbwelt-'+k+'.jpg'; });
+  g.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed', x===b?'true':'false');});
+    bild.style.opacity=0; setTimeout(function(){ bild.src='farbwelt-'+b.dataset.farbe+'.jpg'; bild.alt='Deckblatt und Innenseite einer Beispiel-Analyse in der Farbwelt '+b.dataset.titel.replace('&amp;','&'); bild.style.opacity=1; },180);
+    name.innerHTML=b.dataset.titel+'<small>'+b.dataset.text+'</small>';
+    if(sel){ for(var o of sel.options){ if(o.value.replace('&amp;','&')===b.dataset.titel.replace('&amp;','&')) sel.value=o.value; } }
+  });
+})();
+</script>
 </body>
 </html>
