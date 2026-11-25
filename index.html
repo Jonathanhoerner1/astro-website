@@ -388,6 +388,35 @@
     z-index: 2;
   }
 
+
+  /* ============ GRAFIKEN (Higgsfield, 25.11.2026) ============ */
+  .hero, .cta-section { isolation: isolate; }
+  .hero::after, .cta-section::after {
+    content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background-size: cover; background-repeat: no-repeat;
+  }
+  .hero::after {
+    background-image: url(grafik-hero-nebel.jpg); background-position: 85% center; opacity: .8;
+    -webkit-mask-image: radial-gradient(ellipse 42% 70% at 74% 45%, #000 45%, transparent 100%);
+    mask-image: radial-gradient(ellipse 42% 70% at 74% 45%, #000 45%, transparent 100%);
+  }
+  .cta-section::after {
+    background-image: url(grafik-portal.jpg); background-position: center 40%; opacity: .45;
+    -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 30%, transparent 78%);
+    mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 30%, transparent 78%);
+  }
+  .offer-bild { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .92; }
+  .sektion-band {
+    display: block; width: 100%; max-width: 1100px; margin: 8px auto 56px;
+    aspect-ratio: 21 / 9; object-fit: cover; height: auto;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 30px 80px rgba(0,0,0,.45);
+  }
+  .nl-bild {
+    display: block; width: 100%; max-width: 440px; height: auto; margin: 8px 0 28px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+  }
+
   /* ============ SECTION 3: VERTRAUEN (Empathie -> Autorität -> Founder) ============ */
   .trust { text-align: center; }
   .trust-intro {
@@ -558,6 +587,7 @@
     aspect-ratio: 3/4;
     max-width: 400px;
   }
+  .founder-img-wrap.banner { aspect-ratio: 1280 / 1181; max-width: 520px; }
   .founder-img {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -1517,7 +1547,7 @@
     </div>
 
     <div class="offer-visual">
-      <div class="offer-symbol">☉</div>
+      <img class="offer-bild" src="grafik-werkzeug.jpg" width="1440" height="1800" loading="lazy" alt="Goldenes Astrolabium und Armillarsphäre auf violettem Samt: Astrologie als präzises Werkzeug">
     </div>
   </div>
 </section>
@@ -1526,6 +1556,7 @@
 <section id="vertrauen" class="trust">
   <span class="section-label">Warum diese Astrologie anders ist</span>
   <h2>Die meisten astrologischen Inhalte bleiben an der <em>Oberfläche.</em></h2>
+  <img class="sektion-band" src="grafik-oberflaeche.jpg" width="1800" height="771" loading="lazy" alt="Eisberg im nächtlichen Meer: Nur die Spitze ragt heraus, darunter leuchtet ein riesiger Körper mit goldenen Sternbildlinien">
 
   <div class="trust-intro">
     <p>Sie beschreiben Persönlichkeit — aber nicht die tieferen Schichten dahinter.</p>
@@ -1553,8 +1584,8 @@
 
   <!-- Founder Intro -->
   <div class="founder">
-    <div class="founder-img-wrap">
-      <img src="jonathan-portrait.jpg" alt="Jonathan Hörner" class="founder-img" />
+    <div class="founder-img-wrap banner">
+      <img src="astro-johnny-banner.jpg" width="1280" height="1181" loading="lazy" alt="Jonathan Hörner im goldenen Tierkreis, umgeben von Planetenbahnen: Astro Johnny – Astrologie, Klarheit, Transformation" class="founder-img" />
     </div>
     <div class="founder-text">
       <span class="section-label">Hinter dem Kosmos</span>
@@ -1607,6 +1638,7 @@
   <div class="products">
 
     <div class="product featured">
+      <img class="product-bild" src="grafik-reading.jpg" width="1800" height="1013" loading="lazy" alt="Abendlicher Schreibtisch mit Laptop, auf dem ein Geburtsbild im Videocall leuchtet, daneben Notizbuch, Kerze und Tee">
       <div class="product-num">i</div>
       <h3 class="product-title">1:1 Astro-Reading</h3>
       <p class="product-tagline">Klarheit durch dein Geburtsbild</p>
@@ -1618,6 +1650,7 @@
     </div>
 
     <div class="product featured">
+      <img class="product-bild" src="grafik-betreuung.jpg" width="1800" height="1013" loading="lazy" alt="Goldener Pfad durch eine kosmische Landschaft mit vier Mondphasen als Stationen eines Monats">
       <div class="product-num">ii</div>
       <h3 class="product-title">1 Monat Betreuung</h3>
       <p class="product-tagline">Geburtsbild Deep Dive</p>
@@ -1706,7 +1739,7 @@
       <span class="section-label">Deine Farbe</span>
       <h3>Deine Analyse in <em>deiner</em> Farbe.</h3>
       <p>Deine Premium-Analyse bekommst du in der Farbwelt, die zu dir passt. Gleicher Inhalt, gleiche Tiefe, nur deine Farbe. Tipp eine Farbe an und sieh dir an, wie dein Dokument aussehen würde. Die Farben sind inklusive, die glänzende Sonderedition kostet 2 € mehr.</p>
-      <div class="farb-tupfer" role="group" aria-label="Farbwelt wählen"><button type="button" style="--a:#2a2148;--b:#d4af37" data-farbe="kosmos" data-titel="Kosmos" data-text="Violett und Gold, die Astro-Johnny-Farbe" aria-label="Kosmos" aria-pressed="true"></button><button type="button" style="--a:#2b2313;--b:#e2b84a" data-farbe="gold" data-titel="Gold" data-text="Tiefes Onyx, leuchtendes Gold und Champagner" aria-label="Gold" aria-pressed="false"></button><button type="button" style="--a:#fbf8f1;--b:#a8842c" data-farbe="weissgold" data-titel="Weiß &amp; Gold" data-text="Elfenbein, warmes Gold, hell und edel" aria-label="Weiß &amp; Gold" aria-pressed="false"></button><button type="button" style="--a:#1b2f58;--b:#c9a45c" data-farbe="nachtblau" data-titel="Nachtblau" data-text="Navy, Hortensienblau und warmes Gold" aria-label="Nachtblau" aria-pressed="false"></button><button type="button" style="--a:#173a2e;--b:#d4af37" data-farbe="smaragd" data-titel="Smaragd" data-text="Tiefes Waldgrün, Gold und ein Hauch Kupfer" aria-label="Smaragd" aria-pressed="false"></button><button type="button" style="--a:#fcf6f3;--b:#b57a6a" data-farbe="rosechampagner" data-titel="Rosé &amp; Champagner" data-text="Zartes Rosé, Champagner und Roségold" aria-label="Rosé &amp; Champagner" aria-pressed="false"></button><button type="button" style="--a:#ffe600;--b:#111111" data-farbe="knallgelb" data-titel="Knallgelb" data-text="Leuchtendes Gelb mit schwarzer Schrift" aria-label="Knallgelb" aria-pressed="false"></button><button type="button" style="--a:#c4041f;--b:#ffffff" data-farbe="stadionrot" data-titel="Stadionrot" data-text="Kräftiges Rot, reines Weiß und Blau" aria-label="Stadionrot" aria-pressed="false"></button><button type="button" class="sonder" style="--a:#d6262f;--b:#1b2a5e" data-farbe="dreiklang" data-titel="Dreiklang · Sonderedition" data-text="Rot, Gelb und Nachtblau kräftig ineinander verlaufend · Aufpreis +2 €" aria-label="Dreiklang, Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(160deg,#4a2f06 0%,#a8741a 25%,#f6d77a 45%,#c8942c 62%,#fff0b8 78%,#3d2604 100%)" data-farbe="goldedition" data-titel="Gold · Sonderedition" data-text="Glänzendes Metallgold mit Licht-Reflexen · Aufpreis +2 €" aria-label="Gold · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(160deg,#2a2e36 0%,#7d8592 25%,#e9edf3 45%,#9aa3b1 62%,#ffffff 78%,#23262d 100%)" data-farbe="silberedition" data-titel="Silber · Sonderedition" data-text="Glänzendes Chrom-Silber mit Licht-Reflexen · Aufpreis +2 €" aria-label="Silber · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(160deg,#2a0610 0%,#8e1d36 30%,#c2475f 45%,#f3cf63 52%,#7a1428 62%,#1f040b 100%)" data-farbe="burgund" data-titel="Burgund · Sonderedition" data-text="Tiefes Burgund wie Samt, mit Blattgold und Funkeln · Aufpreis +2 €" aria-label="Burgund · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(90deg,#fff 0 12%,#c4041f 12% 88%,#fff 88%)" data-farbe="fanflagge" data-titel="Rot-Weiß Fanflagge · Sonderedition" data-text="Rot mit weißen Streifen, Emblem und fünf Sternen · +2 €" aria-label="Rot-Weiß Fanflagge · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:repeating-linear-gradient(-30deg,#1e9bd7 0 7px,#fff 7px 14px)" data-farbe="bayernflagge" data-titel="Bayernflagge · Sonderedition" data-text="Volle weiß-blaue Rauten mit gelben Sternen · Aufpreis +2 €" aria-label="Bayernflagge · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:repeating-linear-gradient(-30deg,#bcdcf3 0 6px,#fff 6px 12px);box-shadow:inset 0 0 0 2px rgba(10,99,176,.35)" data-farbe="weissblau" data-titel="Weiß-Blau · Sonderedition" data-text="Weiß-blaue Rauten über die ganze Seite, hell und klar · +2 €" aria-label="Weiß-Blau · Sonderedition" aria-pressed="false"></button></div>
+      <div class="farb-tupfer" role="group" aria-label="Farbwelt wählen"><button type="button" style="--a:#2a2148;--b:#d4af37" data-farbe="kosmos" data-titel="Kosmos" data-text="Violett und Gold, die Astro-Johnny-Farbe" aria-label="Kosmos" aria-pressed="true"></button><button type="button" style="--a:#2b2313;--b:#e2b84a" data-farbe="gold" data-titel="Gold" data-text="Tiefes Onyx, leuchtendes Gold und Champagner" aria-label="Gold" aria-pressed="false"></button><button type="button" style="--a:#fbf8f1;--b:#a8842c" data-farbe="weissgold" data-titel="Weiß &amp; Gold" data-text="Elfenbein, warmes Gold, hell und edel" aria-label="Weiß &amp; Gold" aria-pressed="false"></button><button type="button" style="--a:#1b2f58;--b:#c9a45c" data-farbe="nachtblau" data-titel="Nachtblau" data-text="Navy, Hortensienblau und warmes Gold" aria-label="Nachtblau" aria-pressed="false"></button><button type="button" style="--a:#173a2e;--b:#d4af37" data-farbe="smaragd" data-titel="Smaragd" data-text="Tiefes Waldgrün, Gold und ein Hauch Kupfer" aria-label="Smaragd" aria-pressed="false"></button><button type="button" style="--a:#fcf6f3;--b:#b57a6a" data-farbe="rosechampagner" data-titel="Rosé &amp; Champagner" data-text="Zartes Rosé, Champagner und Roségold" aria-label="Rosé &amp; Champagner" aria-pressed="false"></button><button type="button" style="--a:#ffe600;--b:#111111" data-farbe="knallgelb" data-titel="Knallgelb" data-text="Leuchtendes Gelb mit schwarzer Schrift" aria-label="Knallgelb" aria-pressed="false"></button><button type="button" style="--a:#c4041f;--b:#ffffff" data-farbe="stadionrot" data-titel="Stadionrot" data-text="Kräftiges Rot, reines Weiß und Blau" aria-label="Stadionrot" aria-pressed="false"></button><button type="button" class="sonder" style="--a:#d6262f;--b:#1b2a5e" data-farbe="dreiklang" data-titel="Dreiklang · Sonderedition" data-text="Rot, Gelb und Nachtblau kräftig ineinander verlaufend · Aufpreis +2 €" aria-label="Dreiklang, Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(160deg,#4a2f06 0%,#a8741a 25%,#f6d77a 45%,#c8942c 62%,#fff0b8 78%,#3d2604 100%)" data-farbe="goldedition" data-titel="Gold · Sonderedition" data-text="Glänzendes Metallgold mit Licht-Reflexen · Aufpreis +2 €" aria-label="Gold · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(160deg,#2a2e36 0%,#7d8592 25%,#e9edf3 45%,#9aa3b1 62%,#ffffff 78%,#23262d 100%)" data-farbe="silberedition" data-titel="Silber · Sonderedition" data-text="Glänzendes Chrom-Silber mit Licht-Reflexen · Aufpreis +2 €" aria-label="Silber · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(160deg,#2a0610 0%,#8e1d36 30%,#c2475f 45%,#f3cf63 52%,#7a1428 62%,#1f040b 100%)" data-farbe="burgund" data-titel="Burgund · Sonderedition" data-text="Tiefes Burgund wie Samt, mit Blattgold und Funkeln · Aufpreis +2 €" aria-label="Burgund · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(90deg,#fff 0 12%,#c4041f 12% 88%,#fff 88%)" data-farbe="fanflagge" data-titel="Rot-Weiß Fanflagge · Sonderedition" data-text="Rot mit weißen Streifen, Emblem und fünf Sternen · +2 €" aria-label="Rot-Weiß Fanflagge · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:linear-gradient(180deg,#1e9bd7 0 16%,#fff 16% 22%,#c4041f 22% 78%,#fff 78% 84%,#1e9bd7 84%)" data-farbe="rotrauten" data-titel="Rot mit Rauten · Sonderedition" data-text="Kräftiges Rot mit weiß-blauem Rautenband · +2 €" aria-label="Rot mit Rauten · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:repeating-linear-gradient(-30deg,#1e9bd7 0 7px,#fff 7px 14px)" data-farbe="bayernflagge" data-titel="Bayernflagge · Sonderedition" data-text="Volle weiß-blaue Rauten mit gelben Sternen · Aufpreis +2 €" aria-label="Bayernflagge · Sonderedition" aria-pressed="false"></button><button type="button" class="sonder" style="background:repeating-linear-gradient(-30deg,#bcdcf3 0 6px,#fff 6px 12px);box-shadow:inset 0 0 0 2px rgba(10,99,176,.35)" data-farbe="weissblau" data-titel="Weiß-Blau · Sonderedition" data-text="Weiß-blaue Rauten über die ganze Seite, hell und klar · +2 €" aria-label="Weiß-Blau · Sonderedition" aria-pressed="false"></button></div>
       <div class="farb-name" id="farbName">Kosmos<small>Violett und Gold, die Astro-Johnny-Farbe</small></div>
     </div>
     <div class="farb-bild"><img id="farbBild" src="farbwelt-kosmos.jpg" width="1400" height="983" loading="lazy" alt="Deckblatt und Innenseite einer Beispiel-Analyse in der Farbwelt Kosmos"></div>
@@ -1737,6 +1770,7 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
 <section class="stakes">
   <span class="section-label">Was auf dem Spiel steht</span>
   <h2>Zwei Wege, <em>zwei Realitäten</em>.</h2>
+  <img class="sektion-band" src="grafik-zwei-wege.jpg" width="1800" height="771" loading="lazy" alt="Ein Mensch an einer Weggabelung: links kreisender Nebel, rechts ein Pfad zu einem Sternenhimmel">
 
   <div class="stakes-grid">
     <div class="stakes-col without">
@@ -1770,6 +1804,7 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
     <div class="contact-form-intro">
       <span class="section-label">Newsletter</span>
       <h2>Post aus dem <em>Kosmos</em>.</h2>
+      <img class="nl-bild" src="grafik-newsletter.jpg" width="1800" height="1350" loading="lazy" alt="Briefumschlag mit goldenem Sternsiegel schwebt durch den Kosmos">
       <p>Einmal im Monat schreibe ich dir, was die Zeitqualität gerade mit uns macht — und was du daraus machen kannst.</p>
       <ul class="contact-form-points">
         <li>Die Zeitqualität des kommenden Monats: Neu- und Vollmonde, Zeichenwechsel, die großen Transite</li>
@@ -1862,6 +1897,7 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
           <option value="Silber · Sonderedition">Silber · Sonderedition (+2 €)</option>
           <option value="Burgund · Sonderedition">Burgund · Sonderedition (+2 €)</option>
           <option value="Rot-Weiß Fanflagge · Sonderedition">Rot-Weiß Fanflagge · Sonderedition (+2 €)</option>
+          <option value="Rot mit Rauten · Sonderedition">Rot mit Rauten · Sonderedition (+2 €)</option>
           <option value="Bayernflagge · Sonderedition">Bayernflagge · Sonderedition (+2 €)</option>
           <option value="Weiß-Blau · Sonderedition">Weiß-Blau · Sonderedition (+2 €)</option>
         </select>
@@ -1985,7 +2021,7 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
     <p>
       Jonathan Hörner<br>
       Eschenbach 12<br>
-      91214 Pommelsbrunn<br>
+      91224 Pommelsbrunn<br>
       Deutschland
     </p>
 
@@ -2013,7 +2049,7 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
     <p>
       Jonathan Hörner<br>
       Eschenbach 12<br>
-      91214 Pommelsbrunn
+      91224 Pommelsbrunn
     </p>
 
     <h3>Streitschlichtung</h3>
@@ -2058,7 +2094,7 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
       Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>
       Jonathan Hörner<br>
       Eschenbach 12<br>
-      91214 Pommelsbrunn<br>
+      91224 Pommelsbrunn<br>
       E-Mail: Jonathanhoerner1@gmail.com
     </p>
 
@@ -2373,7 +2409,7 @@ Ich fühle mich selbst ertappt, was ich da so lese 😂</blockquote>
 (function(){
   var g=document.querySelector('.farb-tupfer'); if(!g) return;
   var bild=document.getElementById('farbBild'), name=document.getElementById('farbName'), sel=document.getElementById('cf-farbe');
-  ['gold','weissgold','nachtblau','smaragd','rosechampagner','knallgelb','stadionrot','dreiklang','goldedition','silberedition','burgund','fanflagge','bayernflagge','weissblau'].forEach(function(k){ var i=new Image(); i.src='farbwelt-'+k+'.jpg'; });
+  ['gold','weissgold','nachtblau','smaragd','rosechampagner','knallgelb','stadionrot','dreiklang','goldedition','silberedition','burgund','fanflagge','rotrauten','bayernflagge','weissblau'].forEach(function(k){ var i=new Image(); i.src='farbwelt-'+k+'.jpg'; });
   g.addEventListener('click',function(e){
     var b=e.target.closest('button'); if(!b) return;
     g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed', x===b?'true':'false');});
